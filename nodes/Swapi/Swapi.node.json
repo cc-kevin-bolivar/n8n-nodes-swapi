@@ -1,0 +1,53 @@
+{
+  "displayName": "SWAPI",
+  "name": "swapi",
+  "icon": "file:./example.svg",
+  "group": ["transform"],
+  "version": 1,
+  "description": "Star Wars API Node",
+  "defaults": {
+    "name": "SWAPI"
+  },
+  "inputs": ["main"],
+  "outputs": ["main"],
+  "properties": [
+    {
+      "displayName": "Resource",
+      "name": "resource",
+      "type": "options",
+      "default": "people",
+      "options": [
+        {
+          "name": "People",
+          "value": "people"
+        }
+      ]
+    },
+    {
+      "displayName": "Operation",
+      "name": "operation",
+      "type": "options",
+      "default": "getPerson",
+      "options": [
+        {
+          "name": "Get Person",
+          "value": "getPerson",
+          "description": "Get a person by ID"
+        }
+      ]
+    },
+    {
+      "displayName": "Person ID",
+      "name": "personId",
+      "type": "number",
+      "default": 1,
+      "required": true,
+      "displayOptions": {
+        "show": {
+          "resource": ["people"],
+          "operation": ["getPerson"]
+        }
+      }
+    }
+  ]
+}
